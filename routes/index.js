@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
-router.delete('/comments/:picture', function (req, res) {
+router.delete('/pictures/:picture', function (req, res) {
     console.log("in Delete");
     req.comment.remove();
     res.sendStatus(200);
