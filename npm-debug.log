@@ -3,7 +3,7 @@
 1 verbose cli   '/opt/bitnami/nodejs/bin/npm',
 1 verbose cli   'start' ]
 2 info using npm@3.10.10
-3 info using node@v6.10.3
+3 info using node@v6.11.3
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle comment@0.0.0~prestart: comment@0.0.0
 6 silly lifecycle comment@0.0.0~prestart: no script for prestart, continuing
@@ -22,13 +22,13 @@
 14 verbose stack     at ChildProcess.<anonymous> (/opt/bitnami/nodejs/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
-14 verbose stack     at maybeClose (internal/child_process.js:886:16)
-14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+14 verbose stack     at maybeClose (internal/child_process.js:920:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 15 verbose pkgid comment@0.0.0
 16 verbose cwd /opt/bitnami/apache2/htdocs/creativefive
-17 error Linux 3.13.0-119-generic
+17 error Linux 3.13.0-129-generic
 18 error argv "/opt/bitnami/nodejs/bin/.node.bin" "/opt/bitnami/nodejs/bin/npm" "start"
-19 error node v6.10.3
+19 error node v6.11.3
 20 error npm  v3.10.10
 21 error code ELIFECYCLE
 22 error comment@0.0.0 start: `node ./bin/www`

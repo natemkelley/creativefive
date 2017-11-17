@@ -16,7 +16,7 @@ router.delete('/pictures/:picture', function (req, res) {
     res.sendStatus(200);
 });
 
-router.put('/comments/:picture/upvote', function (req, res, next) {
+router.put('/pictures/:picture/upvote', function (req, res, next) {
     req.comment.upvote(function (err, comment) {
         if (err) {
             return next(err);
@@ -26,7 +26,7 @@ router.put('/comments/:picture/upvote', function (req, res, next) {
 });
 
 
-router.get('/comments', function (req, res, next) {
+router.get('/pictures', function (req, res, next) {
     Picture.find(function (err, comments) {
         if (err) {
             return next(err);
@@ -62,14 +62,14 @@ router.param('picture', function (req, res, next, id) {
             return next(err);
         }
         if (!picture) {
-            return next(new Error("can't find comment"));
+            return next(new Error("can't find picture"));
         }
         req.comment = picture;
         return next();
     });
 });
 
-router.get('/comments/:picture', function (req, res) {
+router.get('/pictures/:picture', function (req, res) {
     res.json(req.comment);
 });
 

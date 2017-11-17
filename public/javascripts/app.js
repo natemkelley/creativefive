@@ -1,4 +1,4 @@
-angular.module('comment', [])
+angular.module('picture', [])
     .controller('MainCtrl', [
   '$scope', '$http',
   function ($scope, $http) {
@@ -24,7 +24,7 @@ angular.module('comment', [])
             }
 
             $scope.delete = function(pictures) {
-              $http.delete('/pictures' + picture._id).success(
+              $http.delete('/pictures/:' + picture._id).success(
                 function (data) {
                   console.log("delete is working")
                 });
