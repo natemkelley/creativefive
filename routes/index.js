@@ -10,7 +10,6 @@ router.get('/', function (req, res, next) {
     });
 });
 
-
 router.delete('/comments/:comment', function (req, res) {
     console.log("in Delete");
     req.comment.remove();
