@@ -5,5 +5,4 @@ var pictureSchema = new mongoose.Schema({
     caption: String
 });
 
-
 mongoose.model('Picture', pictureSchema);
