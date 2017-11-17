@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Comment = mongoose.model('Comment');
+var Comment = mongoose.model('Pictures');
 /* GET home page. */
 
 router.get('/', function (req, res, next) {
