@@ -9,12 +9,12 @@
 </head>
 
 <body ng-app="comment" ng-controller="MainCtrl">
-    <div class="page-header custom-header">
+    <div class=" custom-header">
         <div class="text-center">
             <h3>Add your favorite images!</h3>
         </div>
         <div class="text-center">
-            <form ng-submit="addPicture()" style="margin-top30px;" class="form-inline">
+            <form ng-submit="addPicture()" class="form-inline">
                 <div class="form-group">
                     <label for="url">URL:</label>
                     <input type="text" class="url" id="url" name="url" ng-model="url">
@@ -27,27 +27,24 @@
             </form>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="margin-top: 80px;">
         <div class="row">
-            <div ng-repeat="comment in comments | orderBy: '-upvotes'">
-                <div class="col-md-4">
-                    <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>
-                    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span> {{comment.title}} - upvotes: {{comment.upvotes}}
+            <div ng-repeat="picture in pictures | orderBy: ''">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <img ng-src="{{picture.image}}">
+                    <h4>{{picture.caption}}</h4>
+                    <button type="submit" class="btn btn-danger btn-sm" ng-click="delete(picture)">Add Comment</button>
                 </div>
             </div>
+        </div>
+        <div class=row>
             <h1>filler</h1>
             <h1>filler</h1>
-
             <h1>filler</h1>
-
             <h1>filler</h1>
-
             <h1>filler</h1>
-
             <h1>filler</h1>
-
             <h1>filler</h1>
-
             <h1>filler</h1>
             <h1>filler</h1>
             <h1>filler</h1>
@@ -74,9 +71,13 @@
 
 <style>
     .custom-header {
-        background-color: aliceblue;
+        background-color: white;
         position: sticky;
         top: 0;
+        margin: 0px 0 0px;
+        padding: 25px;
+        z-index: 99999;
+        border-bottom: 1px solid #bcbaba;
     }
 
 </style>
