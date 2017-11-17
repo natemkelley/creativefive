@@ -25,18 +25,18 @@ router.get('/pictures', function (req, res, next) {
     });
 });
 
-router.post('/pictures', function(req,res,next){
-  var picture = new Picture(req.body);
-  picture.save(function (err,picture){
-    if (err){
-      return next(err);
-    }
-    res.json(picture);
-  });
-  console.log(req.body);
+router.post('/pictures', function (req, res, next) {
+    var picture = new Picture(req.body);
+    picture.save(function (err, picture) {
+        if (err) {
+            return next(err);
+        }
+        res.json(picture);
+    });
+    console.log(req.body);
 });
 
-router.get('/pictures/:picture', function(req, res){
+router.get('/pictures/:picture', function (req, res) {
 
 });
 router.param('picture', function (req, res, next, id) {
@@ -58,26 +58,5 @@ router.get('/pictures/:picture', function (req, res) {
     res.json(req.comment);
 });
 
-
-// router.put('/comments/:picture/upvote', function (req, res, next) {
-//     req.comment.upvote(function (err, comment) {
-//         if (err) {
-//             return next(err);
-//         }
-//         res.json(comment);
-//     });
-// });
-
-
-
-// router.post('/pictures', function (req, res, next) {
-//     var picture = new Picture(req.body);
-//     picture.save(function (err, comment) {
-//         if (err) {
-//             return next(err);
-//         }
-//         res.json(comment);
-//     });
-// });
 
 module.exports = router;
