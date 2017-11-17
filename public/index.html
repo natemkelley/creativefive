@@ -31,7 +31,7 @@
         <div class="row">
             <div ng-repeat="picture in pictures | orderBy: ''">
                 <div class="col-lg-3 col-md-4 col-sm-6">
-                    <img ng-src="{{picture.image}}">
+                    <img ng-src="{{picture.url}}">
                     <h4>{{picture.caption}}</h4>
                     <button type="submit" class="btn btn-danger btn-sm" ng-click="delete(picture)">Add Comment</button>
                 </div>
