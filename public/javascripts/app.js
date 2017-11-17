@@ -16,17 +16,6 @@ angular.module('comment', [])
                 $scope.url = '';
                 $scope.caption = '';
             };
-            // $scope.upvote = function (comment) {
-            //     return $http.put('/comments/' + comment._id + '/upvote')
-            //         .success(function (data) {
-            //             console.log("upvote worked");
-            //             comment.upvotes = data.upvotes;
-            //         });
-            // };
-
-            // $scope.incrementUpvotes = function (comment) {
-            //     $scope.upvote(comment);
-            // };
 
             $scope.getAll = function () {
               return $http.get('/pictures').success(function(data){
@@ -34,13 +23,6 @@ angular.module('comment', [])
               })
             }
 
-            // $scope.delete = function (picture) {
-            //     $http.delete('/pictures/' + picture._id)
-            //         .success(function (data) {
-            //             console.log("delete worked");
-            //         });
-            //     $scope.getAll();
-            // };
             $scope.delete = function(pictures) {
               $http.delete('/pictures' + picture._id).success(
                 function (data) {
@@ -57,5 +39,24 @@ angular.module('comment', [])
             };
 
             $scope.getAll();
+            // $scope.delete = function (picture) {
+            //     $http.delete('/pictures/' + picture._id)
+            //         .success(function (data) {
+            //             console.log("delete worked");
+            //         });
+            //     $scope.getAll();
+            // };
+
+            // $scope.upvote = function (comment) {
+            //     return $http.put('/comments/' + comment._id + '/upvote')
+            //         .success(function (data) {
+            //             console.log("upvote worked");
+            //             comment.upvotes = data.upvotes;
+            //         });
+            // };
+
+            // $scope.incrementUpvotes = function (comment) {
+            //     $scope.upvote(comment);
+            // };
   }
 ]);
