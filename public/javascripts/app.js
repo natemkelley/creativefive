@@ -2,21 +2,19 @@ angular.module('comment', [])
     .controller('MainCtrl', [
   '$scope', '$http',
   function ($scope, $http) {
-            $scope.comments = [];
-            $scope.addComment = function () {
-                var newcomment = {
-                    title: $scope.formContent,
-                    upvotes: 0
+            $scope.pictures = [];
+            $scope.addPicture = function () {
+                var newPicture = {
+                    url: $scope.url,
+                    caption: $scope.caption
                 };
-                if ($scope.formContent === '') {
+                if ($scope.url === '') {
                     return;
                 }
-                console.log("In addComment with " + $scope.formContent);
-                $scope.create({
-                    title: $scope.formContent,
-                    upvotes: 0,
-                });
-                $scope.formContent = '';
+                console.log(newPicture);
+                $scope.create(newPicture);
+                $scope.url = '';
+                $scope.caption = '';
             };
             // $scope.upvote = function (comment) {
             //     return $http.put('/comments/' + comment._id + '/upvote')
@@ -26,15 +24,13 @@ angular.module('comment', [])
             //         });
             // };
 
-            $scope.incrementUpvotes = function (comment) {
-                $scope.upvote(comment);
-            };
-
-
+            // $scope.incrementUpvotes = function (comment) {
+            //     $scope.upvote(comment);
+            // };
 
             $scope.getAll = function () {
               return $http.get('/pictures').success(function(data){
-                angular.copy(data, $scope.comments);
+                angular.copy(data, $scope.pictures);
               })
             }
 
@@ -53,9 +49,10 @@ angular.module('comment', [])
               $scope.getAll();
             };
 
-            $scope.create = function (comment) {
-                return $http.post('/comments', comment).success(function (data) {
-                    $scope.comments.push(data);
+            $scope.create = function (picture) {
+              console.log(picture);
+                return $http.post('/pictures', picture).success(function (data) {
+                    $scope.pictures.push(data);
                 });
             };
 

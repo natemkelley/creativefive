@@ -14,14 +14,14 @@
             <h3>Add your favorite images!</h3>
         </div>
         <div class="text-center">
-            <form ng-submit="addComment()" style="margin-top30px;" class="form-inline">
+            <form ng-submit="addPicture()" style="margin-top30px;" class="form-inline">
                 <div class="form-group">
                     <label for="url">URL:</label>
-                    <input type="text" class="form-control" id="url" name="url" ng-model="formContent">
+                    <input type="text" class="url" id="url" name="url" ng-model="url">
                 </div>
                 <div class="form-group">
                     <label for="caption">Caption:</label>
-                    <input type="text" class="form-control" id="caption" name="caption" ng-model="formContent">
+                    <input type="text" class="caption" id="caption" name="caption" ng-model="caption">
                 </div>
                 <button type="submit" class="btn btn-success">Add Comment</button>
             </form>

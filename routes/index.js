@@ -35,14 +35,24 @@ router.get('/comments', function (req, res, next) {
     });
 });
 
-router.post('/comments', function (req, res, next) {
-    var picture = new Picture(req.body);
-    picture.save(function (err, comment) {
-        if (err) {
-            return next(err);
-        }
-        res.json(comment);
-    });
+// router.post('/pictures', function (req, res, next) {
+//     var picture = new Picture(req.body);
+//     picture.save(function (err, comment) {
+//         if (err) {
+//             return next(err);
+//         }
+//         res.json(comment);
+//     });
+// });
+router.post('/pictures', function(req,res,next){
+  var picture = new Picture(req.body);
+  picture.save(function (err,picture){
+    if (err){
+      return next(err);
+    }
+    res.json(picture);
+  });
+  console.log(req.body);
 });
 
 router.param('picture', function (req, res, next, id) {
