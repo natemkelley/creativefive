@@ -35,11 +35,11 @@
     </div>
     <div class="container" style="margin-top: 80px;">
         <div class="row">
-            <div ng-repeat="comment in comments | orderBy: '-upvotes'">
+            <div ng-repeat="picture in pictures | orderBy: ''">
                 <div class="col-lg-3 col-md-4 col-sm-6">
-                    <img src='{{picture.image}}'>
-                    <p>{{picture.caption}}</p>
-                    <button type="submit" class="btn btn-success" ng-click="delete(picture)">Add Comment</button>
+                    <img ng-src="{{picture}}">
+                    <h4>{{picture.caption}}</h4>
+                    <button type="submit" class="btn btn-danger btn-sm" ng-click="delete(picture)">Add Comment</button>
                 </div>
             </div>
             <h1>filler</h1>
