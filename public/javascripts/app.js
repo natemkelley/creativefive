@@ -52,6 +52,5 @@ angular.module('comment', [])
             };
 
             $scope.getAll();
-
   }
 ]);
