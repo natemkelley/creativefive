@@ -32,7 +32,7 @@
             <div ng-repeat="picture in pictures | orderBy: ''">
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="borders">
-                        <img ng-src="{{picture.url}}">
+                        <img ng-src="{{picture.url}}" class="img-responsive img-rounded">
                         <h4>{{picture.caption}}</h4>
                         <button type="submit" class="btn btn-danger btn-sm" ng-click="delete(picture)">Delete Image</button>
                     </div>
@@ -47,7 +47,7 @@
 
 <style>
     .custom-header {
-        background-color: white;
+        background-color: rgba(245, 245, 245, 0.56);
         position: sticky;
         top: 0;
         margin: 0px 0 0px;
@@ -60,8 +60,8 @@
         max-width: 200px;
     }
 
-    .border {
-        border: 1px solid black;
+    .borders {
+        border: 1px solid #cecdcd;
         padding: 15px;
         margin: 10px;
     }
