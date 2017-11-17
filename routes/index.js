@@ -35,6 +35,7 @@ router.post('/pictures', function(req,res,next){
   });
   console.log(req.body);
 });
+
 router.get('/pictures/:picture', function(req, res){
 
 });

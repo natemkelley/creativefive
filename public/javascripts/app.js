@@ -23,14 +23,14 @@ angular.module('picture', [])
               })
             }
 
-<<<<<<< HEAD
+
             $scope.delete = function(picture) {
               console.log(picture);
               $http.delete('/pictures/' + picture._id).success(
-=======
-            $scope.delete = function(pictures) {
-              $http.delete('/pictures/:' + picture._id).success(
->>>>>>> 52d7f8571717e03ba6b575020f53dcef86e4f53c
+// =======
+//             $scope.delete = function(pictures) {
+//               $http.delete('/pictures/:' + picture._id).success(
+// >>>>>>> 52d7f8571717e03ba6b575020f53dcef86e4f53c
                 function (data) {
                   console.log("delete is working")
                 });
