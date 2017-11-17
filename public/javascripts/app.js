@@ -23,8 +23,9 @@ angular.module('comment', [])
               })
             }
 
-            $scope.delete = function(pictures) {
-              $http.delete('/pictures' + picture._id).success(
+            $scope.delete = function(picture) {
+              console.log(picture);
+              $http.delete('/pictures/' + picture._id).success(
                 function (data) {
                   console.log("delete is working")
                 });

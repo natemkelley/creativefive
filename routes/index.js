@@ -16,17 +16,7 @@ router.delete('/pictures/:picture', function (req, res) {
     res.sendStatus(200);
 });
 
-router.put('/comments/:picture/upvote', function (req, res, next) {
-    req.comment.upvote(function (err, comment) {
-        if (err) {
-            return next(err);
-        }
-        res.json(comment);
-    });
-});
-
-
-router.get('/comments', function (req, res, next) {
+router.get('/pictures', function (req, res, next) {
     Picture.find(function (err, comments) {
         if (err) {
             return next(err);
@@ -35,15 +25,6 @@ router.get('/comments', function (req, res, next) {
     });
 });
 
-// router.post('/pictures', function (req, res, next) {
-//     var picture = new Picture(req.body);
-//     picture.save(function (err, comment) {
-//         if (err) {
-//             return next(err);
-//         }
-//         res.json(comment);
-//     });
-// });
 router.post('/pictures', function(req,res,next){
   var picture = new Picture(req.body);
   picture.save(function (err,picture){
@@ -54,7 +35,9 @@ router.post('/pictures', function(req,res,next){
   });
   console.log(req.body);
 });
+router.get('/pictures/:picture', function(req, res){
 
+});
 router.param('picture', function (req, res, next, id) {
     var query = Picture.findById(id);
     query.exec(function (err, picture) {
@@ -69,12 +52,29 @@ router.param('picture', function (req, res, next, id) {
     });
 });
 
-router.get('/comments/:picture', function (req, res) {
-    res.json(req.comment);
-});
+// router.get('/comments/:picture', function (req, res) {
+//     res.json(req.comment);
+// });
+
+// router.put('/comments/:picture/upvote', function (req, res, next) {
+//     req.comment.upvote(function (err, comment) {
+//         if (err) {
+//             return next(err);
+//         }
+//         res.json(comment);
+//     });
+// });
 
 
 
-
+// router.post('/pictures', function (req, res, next) {
+//     var picture = new Picture(req.body);
+//     picture.save(function (err, comment) {
+//         if (err) {
+//             return next(err);
+//         }
+//         res.json(comment);
+//     });
+// });
 
 module.exports = router;
